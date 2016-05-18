@@ -71,7 +71,7 @@ import "github.com/bitwalker/go-metrics/exp"
 
 router = mux.NewRouter()
 expHandler := exp.ExpHandler(metrics.DefaultRegistry)
-router.HandleFunc("/debug/metrics", expHandler).Methods("GET")
+router.Handle("/debug/metrics", expHandler).Methods("GET")
 
 ```
 
