@@ -46,7 +46,7 @@ func Exp(r metrics.Registry) {
 
 // ExpHandler will return expvar-powered metrics handler
 func ExpHandler(r metrics.Registry) http.Handler {
-	e := exp{sync.Mutex(), r}
+	e := exp{sync.Mutex{}, r}
 	return http.HandlerFunc(e.expHandler)
 }
 
